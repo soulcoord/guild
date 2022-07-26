@@ -45,3 +45,4 @@ class ban(Cog_Extension):
 
 def setup(bot):
     bot.add_cog(ban(bot))
+   
