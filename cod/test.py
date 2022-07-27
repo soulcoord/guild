@@ -29,8 +29,8 @@ class test (Cog_Extension):
         a=await ctx.send("hi",view=myview)
     
     @nextcord.slash_command(name="test",description="Interdfs")
-    async def test(self,interaction:nextcord.Integration,message:User):
-        await interaction.response.send_message(f'{message.id}')
+    async def test(self,interaction:nextcord.Integration,message:str=nextcord.SlashOption(name="test",choices={'loli':'loli3','fuck':'fuck5'})):
+        await interaction.response.send_message(f'{message}')
     
     @commands.command(name="embed")
     async def embed(self,ctx):
