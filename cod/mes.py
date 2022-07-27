@@ -5,7 +5,7 @@ from nextcord.ext import commands
 class mes (Cog_Extension):
   @commands.Cog.listener()
   async def on_message(self,mea):
-    if mea.channel.id == 992008416140734574 and ('遊戲') in mea.content:
+    if mea.channel.id == 992008416140734574 and ('id') in mea.content or mea.channel.id == 992008416140734574 and ('ID') in mea.content:
         embed=nextcord.Embed(title="溫迪深淵代打", description="★ 提供代打深境螺旋或是需要角色健檢及隊伍建議的 ★", color=0xc4e1ff)
         embed.set_author(name="温迪#7304", url="https://discord.com/channels/@me/988654327990214656", icon_url="https://cdn.discordapp.com/avatars/537846086749126657/c3ae37775b12e038a1d0c57528ea9e6a.webp?size=80")
         embed.add_field(name="1.在此頻道中留言，留言請參考下面的範例↓↓↓", value="遊戲ID : （自己的）\n 遊戲UID：（自己的）", inline=False)
