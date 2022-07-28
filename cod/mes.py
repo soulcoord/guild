@@ -1,3 +1,4 @@
+from http.client import OK
 from discord import Embed, slash_command
 from core.classes import Cog_Extension
 import nextcord
@@ -29,5 +30,16 @@ class mes (Cog_Extension):
         await interaction.response.edit_message(embed=emb,view=notview)
     hi.callback=hi_callback1
     await interaction.response.send_message(embed=emb,view=myview)
+  @commands.Cog.listener()
+  async def on_message(self,mes:nextcord.Message):
+    if mes.channel.id == 992008416140734574 or mes.channel.id == 978924406745210900:
+      if mes.type != (nextcord.MessageType.chat_input_command)and mes.author.id not in  [972137604470407168,537846086749126657]:
+        await mes.author.send(f'在<#{mes.channel.id}>請使用斜線指令喔(詳細說明請看頻道訂選訊息)')
+        m_t=mes.channel.threads
+        for m_t1 in m_t:
+          if m_t1.owner_id != (972137604470407168):
+            await m_t1.delete()
+        await mes.delete()
+
 def setup(bot):
     bot.add_cog(mes(bot))
