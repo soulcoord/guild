@@ -50,7 +50,7 @@ class quest(nextcord.ui.Modal):
         if len(intersection) == 0 or len(intersection1) == 0:
             return await interaction.response.send_message('缺少身分組，請確認自己是否已領取**<世界等級 & 遊玩的伺服器>之身分組**，若沒領去請去<#978740632086523914>領取',ephemeral=True)
         em=nextcord.Embed(title=(f"UID-{title}"),description=(f"伺服器-{desc}|{word}"))
-        em.set_author(name=name, icon_url=interaction.user.avatar.url)
+        em.set_author(name=name, icon_url=interaction.user.display_avatar.url)
         em.add_field(name="求助人", value=f"{interaction.user.mention}",inline=False)
         em.add_field(name="求助事項", value=help, inline=False)
 
