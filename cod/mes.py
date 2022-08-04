@@ -29,7 +29,7 @@ class mes (Cog_Extension):
       else:  
         await interaction.response.edit_message(embed=emb,view=notview)
     hi.callback=hi_callback1
-    await interaction.response.send_message(embed=emb,view=myview)
+    await interaction.response.send_message(f'<@{interaction.user.id}>',embed=emb,view=myview)
   @commands.Cog.listener()
   async def on_message(self,mes:nextcord.Message):
     if mes.channel.id == 992008416140734574 or mes.channel.id == 978924406745210900:
