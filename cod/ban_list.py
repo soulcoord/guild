@@ -8,7 +8,7 @@ with open('test.json','r',encoding='utf-8') as ban_l:
 print(banlast)
 class ban_list (Cog_Extension):
   @commands.command()
-  @commands.has_any_role("社長","工程師")
+  @commands.has_any_role(978680963099942912,"工程師")
   async def ban_list(self,ctx):
     em=nextcord.Embed(title="ban人名單", color=0xffe380)
     for a in banlast['ban']:
