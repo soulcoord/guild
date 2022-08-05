@@ -3,10 +3,10 @@ from core.classes import Cog_Extension
 import nextcord
 import json
 from nextcord.ext import commands
-with open('test.json','r',encoding='utf-8') as ban_list:
-  banlast=json.load(ban_list)
+with open('test.json','r',encoding='utf-8') as ban_l:
+  banlast=json.load(ban_l)
 print(banlast)
-class voice (Cog_Extension):
+class ban_list (Cog_Extension):
   @commands.command()
   @commands.has_any_role("社長","工程師")
   async def ban_list(self,ctx):
@@ -21,4 +21,4 @@ class voice (Cog_Extension):
 
 
 def setup(bot):
-    bot.add_cog(voice(bot))
+    bot.add_cog(ban_list(bot))
