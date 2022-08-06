@@ -39,6 +39,18 @@ class ban(Cog_Extension):
     with open('test.json','w',encoding='utf8') as loli:
       json.dump(loli1,loli)
 
+  @commands.command()
+  @commands.has_permissions(ban_members=True)
+  async def remove_ban(self,ctx,*,member):
+    with open('test.json','r',encoding='utf8') as loli:
+      loli1=json.load(loli)
+    c_r=member.replace('<','').replace('@','').replace('>','')
+  
+    c=str(c_r).split(' ')
+    for c_kick in c:
+        loli1['ban'].remove(int(c_kick))
+    with open('test.json','w',encoding='utf8') as loli:
+      json.dump(loli1,loli)
 
 
 

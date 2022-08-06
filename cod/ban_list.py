@@ -14,7 +14,7 @@ class ban_list (Cog_Extension):
     em=nextcord.Embed(title="ban人名單", color=0xffe380)
     for a in banlast['ban']:
       u_name=self.bot.get_user(a)
-      em.add_field(name=f"{u_name}", value="​", inline=False)
+      em.add_field(name=f"{u_name}", value=f"{a}", inline=False)
     await ctx.send(embed=em)
 
 
