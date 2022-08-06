@@ -4,7 +4,7 @@ import nextcord
 import json
 from nextcord.ext import commands
 
-print(banlast)
+
 class ban_list (Cog_Extension):
   @commands.command()
   @commands.has_any_role(978680963099942912,"工程師")
