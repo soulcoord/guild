@@ -15,14 +15,6 @@ async def on_ready():
     print('ok')
 
 
-@bot.event
-async def on_command_error(ctx,error):
-  if isinstance(error,commands.errors.CommandInvokeError):
-    await ctx.send("好像沒這個人喔")
-  if isinstance(error,commands.errors.MissingRequiredArgument):
-    await ctx.send("要輸入成員的@喔")
-  if isinstance(error,commands.errors.MissingPermissions):
-    await ctx.send("你的權限不足喔")
 
 
 @commands.is_owner()
