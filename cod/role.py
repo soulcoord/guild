@@ -341,6 +341,31 @@ class role (Cog_Extension):
             b_g=self.bot.get_guild(interaction.guild_id)
             r_role=b_g.get_role(994899194236125185)#假面騎士
             await interaction.user.add_roles(r_role)
+          if "gif14" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565265158021150)#傳說對決
+            await interaction.user.add_roles(r_role)
+          if "gif15" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565561187803187)#APEX
+            await interaction.user.add_roles(r_role)
+          if "gif16" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565613918593055)#絕對零
+            await interaction.user.add_roles(r_role)
+          if "gif17" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565615902503002)#遊戲王
+            await interaction.user.add_roles(r_role)
+          if "gif18" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565999580655616)#明日方舟
+            await interaction.user.add_roles(r_role)
+          if "gif19" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007566084435628092)#空洞騎士
+            await interaction.user.add_roles(r_role)
+
 
 
       ts3=nextcord.SelectOption(label="特殊性向成人圖區",value="gif2",description="領取後將開啟隱藏的子頻道")
@@ -355,7 +380,13 @@ class role (Cog_Extension):
       ts12=nextcord.SelectOption(label="專業攝影交流。",value="gif11",description="領取後將開啟隱藏的子頻道")    
       ts13=nextcord.SelectOption(label="準備開吉。",value="gif12",description="領取後將開啟隱藏的子頻道")
       ts14=nextcord.SelectOption(label="假面騎士。",value="gif13",description="領取後將開啟隱藏的子頻道")
-      dropdown=nextcord.ui.Select(placeholder="最多可一次選擇6項身分組",options=[ts3,ts4,ts5,ts6,ts7,ts8,ts9,ts10,ts11,ts12,ts13,ts14],max_values=6)
+      ts15=nextcord.SelectOption(label="傳說對決。",value="gif14",description="領取後將開啟隱藏的子頻道")  
+      ts16=nextcord.SelectOption(label="APEX。",value="gif15",description="領取後將開啟隱藏的子頻道")  
+      ts17=nextcord.SelectOption(label="絕對零。",value="gif16",description="領取後將開啟隱藏的子頻道")  
+      ts18=nextcord.SelectOption(label="遊戲王。",value="gif117",description="領取後將開啟隱藏的子頻道")
+      ts19=nextcord.SelectOption(label="明日方舟。",value="gif18",description="領取後將開啟隱藏的子頻道")    
+      ts20=nextcord.SelectOption(label="空洞騎士。",value="gif19",description="領取後將開啟隱藏的子頻道")
+      dropdown=nextcord.ui.Select(placeholder="最多可一次選擇6項身分組",options=[ts3,ts4,ts5,ts6,ts7,ts8,ts9,ts10,ts11,ts12,ts13,ts14,ts15,ts16,ts17,ts18,ts19,ts20],max_values=6)
       dropdown.callback=callback1
       value1=nextcord.ui.View()
       value1.add_item(dropdown)
@@ -412,6 +443,30 @@ class role (Cog_Extension):
             b_g=self.bot.get_guild(interaction.guild_id)
             r_role=b_g.get_role(994899194236125185)#假面騎士
             await interaction.user.remove_roles(r_role)
+          if "gif14" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565265158021150)#傳說對決
+            await interaction.user.remove_roles(r_role)
+          if "gif15" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565561187803187)#APEX
+            await interaction.user.remove_roles(r_role)
+          if "gif16" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565613918593055)#絕對零
+            await interaction.user.remove_roles(r_role)
+          if "gif17" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565615902503002)#遊戲王
+            await interaction.user.remove_roles(r_role)
+          if "gif18" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007565999580655616)#明日方舟
+            await interaction.user.remove_roles(r_role)
+          if "gif19" in dropdown.values:
+            b_g=self.bot.get_guild(interaction.guild_id)
+            r_role=b_g.get_role(1007566084435628092)#空洞騎士
+            await interaction.user.remove_roles(r_role)
 
 
       ts3=nextcord.SelectOption(label="特殊性向成人圖區",value="gif2",description="領取後將開啟隱藏的子頻道")
@@ -426,7 +481,13 @@ class role (Cog_Extension):
       ts12=nextcord.SelectOption(label="專業攝影交流。",value="gif11",description="領取後將開啟隱藏的子頻道")      
       ts13=nextcord.SelectOption(label="準備開吉。",value="gif12",description="領取後將開啟隱藏的子頻道")
       ts14=nextcord.SelectOption(label="假面騎士。",value="gif13",description="領取後將開啟隱藏的子頻道")
-      dropdown=nextcord.ui.Select(placeholder="最多可一次移除6個身分組",options=[ts3,ts4,ts5,ts6,ts7,ts8,ts9,ts10,ts11,ts12,ts13,ts14],max_values=6)
+      ts15=nextcord.SelectOption(label="傳說對決。",value="gif14",description="領取後將開啟隱藏的子頻道")  
+      ts16=nextcord.SelectOption(label="APEX。",value="gif15",description="領取後將開啟隱藏的子頻道")  
+      ts17=nextcord.SelectOption(label="絕對零。",value="gif16",description="領取後將開啟隱藏的子頻道")  
+      ts18=nextcord.SelectOption(label="遊戲王。",value="gif117",description="領取後將開啟隱藏的子頻道")
+      ts19=nextcord.SelectOption(label="明日方舟。",value="gif18",description="領取後將開啟隱藏的子頻道")    
+      ts20=nextcord.SelectOption(label="空洞騎士。",value="gif19",description="領取後將開啟隱藏的子頻道")
+      dropdown=nextcord.ui.Select(placeholder="最多可一次移除6個身分組",options=[ts3,ts4,ts5,ts6,ts7,ts8,ts9,ts10,ts11,ts12,ts13,ts14,ts15,ts16,ts17,ts18,ts19,ts20],max_values=6)
       dropdown.callback=callback1
       value1=nextcord.ui.View()
       value1.add_item(dropdown)
