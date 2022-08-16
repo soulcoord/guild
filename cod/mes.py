@@ -45,6 +45,5 @@ class mes (Cog_Extension):
       user_uid[str(mes.author.id)]["content"]=mes.content
       with open('uid.json','w',encoding='utf8') as uid:
         json.dump(user_uid,uid)
-      print(user_uid)
 def setup(bot):
     bot.add_cog(mes(bot))
