@@ -12,5 +12,16 @@ class kick (Cog_Extension):
         for c_kick in c:
             a=ctx.guild.get_member(int(c_kick))
             await a.kick(reason=reason)
+    @nextcord.slash_command(name='自我介紹')
+    async def 自我介紹(self,interaction:nextcord.interactions):
+        with open('uid.json','r',encoding='utf8') as uid:
+            user_uid=json.load(uid)
+        if str(interaction.user.id) in user_uid:
+            emb=nextcord.Embed(color=0xffdbdb)
+            emb.set_author(name=interaction.user.display_name,icon_url=interaction.user.display_avatar.url)
+            emb.add_field(name="​", value=f'[自我介紹]({user_uid[str(interaction.user.id)]["content"]})', inline=False)            
+            await interaction.send(embed=emb)
+        elif interaction.user.id not in user_uid:
+            await interaction.send('請先去<#990553527547990046>輸入資料')
 def setup(bot):
     bot.add_cog(kick(bot))

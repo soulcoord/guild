@@ -1,8 +1,10 @@
+import asyncio
 from http.client import OK
 from discord import Embed, slash_command
 from core.classes import Cog_Extension
 import nextcord
 import json
+import random
 from nextcord.ext import commands
 class mes (Cog_Extension):
   @nextcord.slash_command(name='深淵',description='深淵代打申請(僅幫代打9~12層)')
@@ -36,6 +38,13 @@ class mes (Cog_Extension):
       if mes.type != (nextcord.MessageType.chat_input_command)and mes.author.id not in  [972137604470407168,537846086749126657]:
         await mes.author.send(f'在<#{mes.channel.id}>請使用斜線指令喔(詳細說明請看頻道訂選訊息)')
         await mes.delete()
-
+    elif mes.channel.id == 990553527547990046:
+      with open('uid.json','r',encoding='utf8') as uid:
+        user_uid=json.load(uid)
+      user_uid[str(mes.author.id)]={}
+      user_uid[str(mes.author.id)]["content"]=mes.content
+      with open('uid.json','w',encoding='utf8') as uid:
+        json.dump(user_uid,uid)
+      print(user_uid)
 def setup(bot):
     bot.add_cog(mes(bot))
