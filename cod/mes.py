@@ -1,5 +1,4 @@
 import asyncio
-from http.client import OK
 from discord import Embed, slash_command
 from core.classes import Cog_Extension
 import nextcord
