@@ -22,19 +22,21 @@ class ban_list (Cog_Extension):
   async def on_member_remove(self,mem:nextcord.Member):
     with open('test.json','r',encoding='utf-8') as ban_l:
       banlast=json.load(ban_l)
-    if (str(mem.id)) not in (banlast['leavl']):
+    if mem.id in (banlast['ban']):
+      pass
+    elif (str(mem.id)) not in (banlast['leavl']):
       banlast['leavl'][mem.id]=1
       with open('test.json','w',encoding='utf-8') as ban_l:
-        json.dump(banlast,ban_l)
+        json.dump(banlast,ban_l,indent=4)
     elif banlast['leavl'][str(mem.id)] >=1:
       banlast['ban'].append(int(mem.id))
       del banlast['leavl'][str(mem.id)]
       with open('test.json','w',encoding='utf8') as loli:
-        json.dump(banlast,loli)
+        json.dump(banlast,loli,indent=4)
     else:
       banlast['leavl'][str(mem.id)]+=1
       with open('test.json','w',encoding='utf-8') as ban_l:
-        json.dump(banlast,ban_l)      
+        json.dump(banlast,ban_l,indent=4)
     
 
 

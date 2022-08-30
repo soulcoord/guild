@@ -26,7 +26,7 @@ class mes (Cog_Extension):
     myview.add_item(hi)
     notview.add_item(hi1)
     async def hi_callback1(interaction):
-      if interaction.user.id != 537846086749126657:
+      if interaction.user.id not in [537846086749126657,560450371491725313]:
         await interaction.response.send_message('非溫迪本人按這個的話沒用喔',ephemeral=True)
       else:  
         await interaction.response.edit_message(embed=emb,view=notview)
@@ -35,7 +35,7 @@ class mes (Cog_Extension):
   @commands.Cog.listener()
   async def on_message(self,mes:nextcord.Message):
     if mes.channel.id == 992008416140734574 or mes.channel.id == 978924406745210900:
-      if mes.type != (nextcord.MessageType.chat_input_command)and mes.author.id not in  [972137604470407168,537846086749126657]:
+      if mes.type != (nextcord.MessageType.chat_input_command)and mes.author.id not in  [972137604470407168,537846086749126657,992351373280690206]:
         await mes.author.send(f'在<#{mes.channel.id}>請使用斜線指令喔(詳細說明請看頻道訂選訊息)')
         await mes.delete()
     elif mes.channel.id == 990553527547990046:
