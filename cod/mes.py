@@ -44,5 +44,16 @@ class mes (Cog_Extension):
       user_uid[str(mes.author.id)]["content"]=mes.content
       with open('uid.json','w',encoding='utf8') as uid:
         json.dump(user_uid,uid)
+  @commands.command()
+  async def get_me(self,ctx):
+    channel=self.bot.get_channel(990553527547990046)
+    with open('uid.json','r',encoding='utf8') as uid:
+      user_uid=json.load(uid)
+    async for message in channel.history(limit=None):
+      user_uid[str(message.author.id)]={}
+      user_uid[str(message.author.id)]["content"]=message.content
+      user_uid[str(message.author.id)]["id"]=message.id
+      with open('uid.json','w',encoding='utf8') as uid:
+        json.dump(user_uid,uid,indent=2,ensure_ascii=False)
 def setup(bot):
     bot.add_cog(mes(bot))
