@@ -17,7 +17,7 @@ class EmbedModal(nextcord.ui.Modal):
         return await interaction.response.send_message(embed=em)
 
 class quest(nextcord.ui.Modal):
-    def __init__(self,uid,name):
+    def __init__(self,uid=None,name=None):
         super().__init__(
             "委託單",
         )
