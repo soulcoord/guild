@@ -17,13 +17,13 @@ class EmbedModal(nextcord.ui.Modal):
         return await interaction.response.send_message(embed=em)
 
 class quest(nextcord.ui.Modal):
-    def __init__(self):
+    def __init__(self,uid,name):
         super().__init__(
             "委託單",
         )
-        self.emTitle=nextcord.ui.TextInput(label="UID",min_length=9,max_length=9,required=True,placeholder="輸入你的UID")
+        self.emTitle=nextcord.ui.TextInput(label="UID",min_length=9,max_length=9,required=True,placeholder="輸入你的UID",default_value=uid)
         self.add_item(self.emTitle)
-        self.emname=nextcord.ui.TextInput(label="名稱",max_length=12,required=True,placeholder="輸入你的名稱")
+        self.emname=nextcord.ui.TextInput(label="名稱",max_length=12,required=True,placeholder="輸入你的名稱",default_value=name)
         self.add_item(self.emname)
         self.emhelp=nextcord.ui.TextInput(label="需要幫助內容",min_length=1,max_length=30,required=True,placeholder="需要幫助內容")
         self.add_item(self.emhelp)
