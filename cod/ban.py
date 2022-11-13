@@ -14,8 +14,15 @@ class ban(Cog_Extension):
         c=self.bot.get_channel(978708780445495328)
         await c.send(f"{mem.mention}抓到你咯 還敢亂群")
       else:
+        embeds=nextcord.Embed(title="大東亞帝國", description="大明王朝Ming dynasty", color=0xe32626)
+        embeds.add_field(name="新手須知", value=f"{mem.mention} 請詳閱 <#978707952640872548> 以了解伺服器規範！\n 同時可以透過 <#978708014695600188> 熟悉頻道功能，\n 如果想快速認識大家可以到 <#990553527547990046> 。 ", inline=False)
+        embeds.add_field(name="身分組領取", value="並且可透過 <#978740632086523914> 開啟色色區或者是內鬼情報區哦！ ", inline=False)
+        embeds.add_field(name="遊戲疑難", value="另外有任何遊戲疑問可在 <#978925411494920243>  進行詢問，\n 打不過的秘境或者BOSS也可於 <#978924406745210900>  來發布委託！", inline=False)
+        embeds.set_image("https://upload.cc/i1/2022/11/10/rb6dCB.png")
         c=self.bot.get_channel(978708780445495328)
-        await c.send(f"{mem.mention} 請詳閱 <#978707952640872548> \n 可以透過 <#978708014695600188> 熟悉頻道功能\n歡迎到 <#987734120505421844> <#986372265820172299> 投稿\n如果想快速認識大家可以到 <#990553527547990046>")
+        w=self.bot.get_channel(978680659428147292)
+        await c.send(f"旅行者{mem.mention}，歡迎您的到來！")
+        await w.send(embed=embeds)
   
   @commands.command()
   @commands.has_permissions(ban_members=True)
@@ -51,6 +58,9 @@ class ban(Cog_Extension):
         loli1['ban'].remove(int(c_kick))
     with open('test.json','w',encoding='utf8') as loli:
       json.dump(loli1,loli)
+
+
+
 
 
 

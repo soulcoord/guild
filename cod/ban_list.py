@@ -4,7 +4,6 @@ import nextcord
 import json
 from nextcord.ext import commands
 
-from main import load
 
 
 class ban_list (Cog_Extension):

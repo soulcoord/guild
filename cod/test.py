@@ -1,12 +1,12 @@
-from msilib.schema import Component
-from discord import User, VideoQualityMode
 from core.classes import Cog_Extension
 from modal import EmbedModal
 import nextcord
 import json
 from nextcord.ext import commands
-
+import time
+import datetime
 class test (Cog_Extension):
+
     @commands.is_owner()
     @commands.command(name='support')
     async def support(self,ctx):
